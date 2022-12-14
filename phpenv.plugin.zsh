@@ -17,7 +17,7 @@ fi
 
 if [[ $FOUND_PHPENV -eq 1 ]]; then
     (( $+commands[phpenv] )) || export PATH="${phpenvdir}/bin:$PATH"
-    eval "$(phpenv init - zsh)"
+    eval "$(phpenv init -)"
 
     function phpnv_prompt_info() {
       local version="$(phpenv version-name 2>/dev/null)"
