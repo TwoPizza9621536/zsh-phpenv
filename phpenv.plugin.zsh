@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-phpenvdirs=("$HOME/.phpenv" "/usr/local/bin/phpenv" "/usr/local/phpenv" "/opt/phpenv")
+phpenvdirs=("$HOME/.phpenv" "$XDG_DATA_HOME/phpenv" "/usr/local/bin/phpenv" "/usr/local/phpenv" "/opt/phpenv")
 
 FOUND_PHPENV=0
 for phpenvdir in $phpenvdirs; do
