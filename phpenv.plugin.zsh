@@ -19,7 +19,7 @@ if [[ $FOUND_PHPENV -eq 1 ]]; then
     (( $+commands[phpenv] )) || export PATH="${phpenvdir}/bin:$PATH"
     eval "$(phpenv init -)"
 
-    function phpnv_prompt_info() {
+    function phpenv_prompt_info() {
       local version="$(phpenv version-name 2>/dev/null)"
       echo "${version:gs/%/%%}"
     }
@@ -29,7 +29,7 @@ if [[ $FOUND_PHPENV -eq 1 ]]; then
     fi
 else
     function phpenv_prompt_info() {
-      local version="$(php --version | cut -d' ' -f2)"
+      local version="$(php --version | cut -d' ' -f2 | sed '1p;d')"
       echo "system: ${version:gs/%/%%}"
     }
 fi
